@@ -1,4 +1,3 @@
-
 import './App.css';
 import useDate from './hooks/useDate';
 import Userinfo from './components/Userinfo';
@@ -9,7 +8,9 @@ const {ano, mes, dia} = useDate()
 
   return (
 <>
-<Userinfo ano={ano} mes={mes} dia={dia}/>
+<div className='mainpage'>
+  <Userinfo ano={ano} mes={mes} dia={dia}/>
+</div>
 
 </>
   );
