@@ -5,7 +5,73 @@ const Userinfo = ({ano, mes, dia}) => {
   const [useAno, setUserAno] = useState('')
   const [useMes, setUserMes] = useState('')
   const [useDia, setUseDia] = useState('')
-  const [dataInicial, setDataInicial ] = useState(``)
+  const [userAnos, setUserAnos] = useState('')
+  const [userMeses, setUserMeses] = useState('')
+  const [userDias, setUserDias] = useState('')
+
+
+  
+
+
+  return (
+
+
+    <div className="mainpage">
+
+
+
+      <form >
+        
+        
+          <div className="day"  >
+            <p>dia</p>
+            <input type="text"  required placeholder='Seu dia de nascimento!' value={useDia} onChange={(e) => setUseDia(e.target.value)} />
+          </div>
+          <div className="month">
+            <p>month</p>
+            <input type="text" required placeholder='Seu mes de nascimento!' value={useMes} onChange={(e) => setUserMes(e.target.value)}/>
+          </div>
+          <div className="year">
+            <p>year</p>
+            <input input type="text" required placeholder='Seu ano de nascimento!' value={useAno} onChange={(e) => setUserAno(e.target.value)}/>
+          </div>
+          
+
+      </form>
+
+
+      <div className="horizontal-line"></div>
+      <ul>
+        <li><span>{userAnos}</span> Anos</li>
+        <li><span>{userMeses}</span> Meses</li>
+        <li><span>12</span>Dias</li>
+      </ul>
+      
+
+
+    </div>
+  )
+}
+
+export default Userinfo
+
+/**
+ *   useEffect(() => {
+    setUserAnos( ano - useAno)
+  },[useAno, ano, useMes])
+
+  useEffect(() => {
+    setUserMeses(mes - useMes)
+  },[mes, useMes])
+
+  useEffect(() => {
+    setUserDias(dia - userDias)
+  },[dia, userDias])
+ * 
+ * 
+ * 
+ * 
+ *   const [dataInicial, setDataInicial ] = useState(``)
   const [dataAtual, setDataAtual ] = useState(``)
 
 useEffect(() => {
@@ -17,39 +83,27 @@ useEffect(() => {
 },[ano, mes, dia])
 
 
-function calcularDiferencaDias(dataInicial, dataFinal) {
-  // Converter as datas para objetos Date
-  var dataInicio = new Date(dataInicial);
-  var dataFim = new Date(dataFinal);
 
-  // Calcular a diferença em milissegundos
-  var diferencaMilissegundos = Math.abs(dataFim - dataInicio);
-
-  // Converter a diferença em dias
-  var diferencaDias = Math.ceil(diferencaMilissegundos / (1000 * 60 * 60 * 24));
-
-  return diferencaDias;
-}
-
-  return (
-    <form>
-     <p>{ano} {mes} {dia}</p>
-     <label >
-      <input type="text" required placeholder='Seu ano de nascimento!' value={useAno} onChange={(e) => setUserAno(e.target.value)} />
-      </label>
-      <label >
-      <input type="text" required placeholder='Seu dia de nascimento!' value={useDia} onChange={(e) => setUseDia(e.target.value)} />
-      </label>
-      <label >
-      <input type="text" required placeholder='Seu mes de nascimento!' value={useMes} onChange={(e) => setUserMes(e.target.value)} />
-      </label>
-      <h2>{ano-useAno} {mes - useMes} {dia- useDia} </h2>
-      <h1>{dataInicial}</h1>
-      <h1>{dataAtual}</h1>
-      <h2>{calcularDiferencaDias(dataInicial, dataAtual)}</h2>
-      <p>{10626/365}</p>
-    </form>
-  )
-}
-
-export default Userinfo
+ *       <div className='inputrow'>
+        <form>
+         <p>{ano} {mes} {dia}</p>
+         <label >
+          <h6>Ano</h6>
+          <input type="text" required placeholder='Seu ano de nascimento!' value={useAno} onChange={(e) => setUserAno(e.target.value)} />
+          </label>
+          <label >
+          <h6>Dia</h6>
+          <input type="text" required placeholder='Seu dia de nascimento!' value={useDia} onChange={(e) => setUseDia(e.target.value)} />
+          </label>
+          <label >
+          <h6>Mes</h6>
+          <input type="text" required placeholder='Seu mes de nascimento!' value={useMes} onChange={(e) => setUserMes(e.target.value)} />
+          </label>
+          <h2>{ano-useAno} {mes - useMes} {dia- useDia} </h2>
+          <h1>{dataInicial}</h1>
+          <h1>{dataAtual}</h1>
+          <h2>{calcularDiferencaDias(dataInicial, dataAtual)}</h2>
+          <p>{10626/365}</p>
+        </form>
+      </div>
+ */

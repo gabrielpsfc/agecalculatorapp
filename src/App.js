@@ -7,12 +7,15 @@ function App() {
 const {ano, mes, dia} = useDate()
 
   return (
-<>
-<div className='mainpage'>
-  <Userinfo ano={ano} mes={mes} dia={dia}/>
-</div>
 
-</>
+    <><a href="https://www.youtube.com/watch?v=jx5jmI0UlXU"> position</a>
+    <Userinfo ano={ano} mes={mes} dia={dia}/> 
+    
+    </>
+     
+  
+
+
   );
 }
 
