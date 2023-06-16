@@ -1,16 +1,29 @@
-import React from 'react'
-import { useState, useEffect } from 'react'
 
-const Userinfo = ({ano, mes, dia}) => {
-  const [useAno, setUserAno] = useState('')
-  const [useMes, setUserMes] = useState('')
-  const [useDia, setUseDia] = useState('')
+import { useState, } from 'react'
+import useCalcIdade from '../hooks/useCalcIdade'
+
+const Userinfo = ({ ano, mes, dia }) => {
+  const [useAno, setUserAno] = useState(0)
+  const [useMes, setUserMes] = useState(0)
+  const [useDia, setUseDia] = useState(0)
   const [userAnos, setUserAnos] = useState('')
   const [userMeses, setUserMeses] = useState('')
   const [userDias, setUserDias] = useState('')
 
 
-  
+  const HandleSubmit = (e) => {
+    e.preventDefault()
+    console.log('ok')
+    const { meses, anos, LastMeses, dias } = useCalcIdade({ ano, mes, dia }, { ano: useAno, mes: useMes-1, dia: useDia })
+    console.log(meses)
+    setUserAnos(anos);
+    setUserMeses(LastMeses);
+    setUserDias(dias);
+
+  }
+
+
+
 
 
   return (
@@ -20,22 +33,23 @@ const Userinfo = ({ano, mes, dia}) => {
 
 
 
-      <form >
-        
-        
-          <div className="day"  >
-            <p>dia</p>
-            <input type="text"  required placeholder='Seu dia de nascimento!' value={useDia} onChange={(e) => setUseDia(e.target.value)} />
-          </div>
-          <div className="month">
-            <p>month</p>
-            <input type="text" required placeholder='Seu mes de nascimento!' value={useMes} onChange={(e) => setUserMes(e.target.value)}/>
-          </div>
-          <div className="year">
-            <p>year</p>
-            <input input type="text" required placeholder='Seu ano de nascimento!' value={useAno} onChange={(e) => setUserAno(e.target.value)}/>
-          </div>
-          
+      <form onSubmit={(e) => HandleSubmit(e)}>
+
+
+        <div className="day"  >
+          <p>dia</p>
+          <input type="number" required placeholder='Seu dia de nascimento!' value={useDia} onChange={(e) => setUseDia(e.target.value)} />
+        </div>
+        <div className="month">
+          <p>month</p>
+          <input type="number" required placeholder='Seu mes de nascimento!' value={useMes} onChange={(e) => setUserMes(e.target.value)} />
+        </div>
+        <div className="year">
+          <p>year</p>
+          <input input type="number" required placeholder='Seu ano de nascimento!' value={useAno} onChange={(e) => setUserAno(e.target.value)} />
+        </div>
+        <button type="submit"> Submit</button>
+
 
       </form>
 
@@ -44,9 +58,9 @@ const Userinfo = ({ano, mes, dia}) => {
       <ul>
         <li><span>{userAnos}</span> Anos</li>
         <li><span>{userMeses}</span> Meses</li>
-        <li><span>12</span>Dias</li>
+        <li><span>{userDias}</span>Dias</li>
       </ul>
-      
+
 
 
     </div>
