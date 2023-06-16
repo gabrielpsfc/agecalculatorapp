@@ -13,7 +13,7 @@ const useCalcIdade = (atual, user) => {
     }else if (atual.mes - 1 === 1){ // mes anterior é fevereiro
       console.log('mes anterior é fevereiro')
       if(atual.ano%4 !==0){ //ano não é bissexto
-        console.log('no não é bissexto')
+        console.log('ano não é bissexto')
         dias = atual.dia +28 - user.dia
       }else {// ano é bissexto
         console.log('ano é bissexto')
