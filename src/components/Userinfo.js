@@ -1,4 +1,4 @@
-
+import Icone from './Icone'
 import { useState, } from 'react'
 import useCalcIdade from '../hooks/useCalcIdade'
 
@@ -21,11 +21,6 @@ const Userinfo = ({ ano, mes, dia }) => {
     setUserDias(dias);
 
   }
-
-
-
-
-
   return (
 
 
@@ -37,18 +32,20 @@ const Userinfo = ({ ano, mes, dia }) => {
 
 
         <div className="day"  >
-          <p>dia</p>
+          <p>DAY</p>
           <input type="number" required placeholder='Seu dia de nascimento!' value={useDia} onChange={(e) => setUseDia(e.target.value)} />
         </div>
         <div className="month">
-          <p>month</p>
+          <p>MONTH</p>
           <input type="number" required placeholder='Seu mes de nascimento!' value={useMes} onChange={(e) => setUserMes(e.target.value)} />
         </div>
         <div className="year">
-          <p>year</p>
+          <p>YEAR</p>
           <input input type="number" required placeholder='Seu ano de nascimento!' value={useAno} onChange={(e) => setUserAno(e.target.value)} />
         </div>
-        <button type="submit"> Submit</button>
+
+        <button type="submit"> <Icone/></button>
+       
 
 
       </form>

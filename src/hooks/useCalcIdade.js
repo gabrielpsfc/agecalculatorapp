@@ -1,6 +1,9 @@
 
 const useCalcIdade = (atual, user) => {
-  const meses = ((atual.ano - user.ano)*12) +(atual.mes - user.mes)
+  let meses = ((atual.ano - user.ano)*12) +(atual.mes - user.mes)
+  console.log(meses)
+  if(atual.dia < user.dia) {meses -= 1}
+  console.log(meses)
   const anos = Math.floor(meses/12)
   let LastMeses = meses%12
   let dias = 0
@@ -22,7 +25,7 @@ const useCalcIdade = (atual, user) => {
     }else {
       dias = atual.dia + 30 - user.dia; // mes anterior termina com 30 dias
     }
-    LastMeses -= 1 
+ 
   } else {
     dias = atual.dia - user.dia;
   }

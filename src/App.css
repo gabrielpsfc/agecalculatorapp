@@ -8,6 +8,8 @@
   --Light-red: hsl(0, 100%, 67%);
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Poppins:ital,wght@0,700;1,400;1,800&display=swap');
+
 body{
   background-color: var(--Light-grey);
 }
@@ -19,8 +21,8 @@ body{
   left: 50%; /*metade da largura do elemento pai para a direita*/
   top:50%;/* metade da altura do elemento pai para baixo*/
   transform: translate(-50%, -50%);/*metade do propria largula para a esquerda e metade da propria altura para cima*/
-  width: 45%;
-  height: 80%;
+  width: 40%;
+  height: 65%;
   border-bottom-right-radius: 22%;
 }
 
@@ -28,27 +30,33 @@ form{
   position: absolute;
   left: 5%;
   padding: 30px;
+  font-family: 'Poppins', sans-serif;
+  font-weight: lighter;
+  color: var(--Smokey-grey);
 }
 
-.inputs{
-  position: absolute;
-  
-
+input:focus {
+  border: 1px solid var(--Purple);
+  outline: none;
 }
+
 .day{
  position: relative;
+padding-right: 50px;
 
 
 }
 .month{
   position: relative;
   left: 100%;
-  bottom: 76px;  
+  bottom: 95px;  
+  padding-right: 50px;
 }
 .year{
   position: relative;
   left: 200%;
-  bottom: 152px;  
+  bottom:189px;  
+  padding-right: 50px;
 
 
 }
@@ -68,4 +76,56 @@ ul{
   top: 45%;
 }
 
+button {
+  width: 80px;
+  height: 80px;
+  border-radius: 70px;
+  display: flex;
+  background-color: var(--Off-black);
+  border: 0px;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-size: 12px;
+  position: absolute;
+  left: 280%; /* Ajuste a porcentagem de acordo com sua necessidade */
+  top: 45%; /* Ajuste o valor de acordo com sua necessidade */
+  transform: translateX(-50%); /* Centraliza horizontalmente o botão */
+
+}
+
+button svg{
+  width: 30px;
+  height: 30px;
+}
+
+button:hover{
+
+  background-color: var(--Purple);
+
+}
+
+input{
+  width: 90px;
+  height: 30px;
+  border-radius: 8px;
+  font-size: 32px;
+  font-family: 'Poppins', sans-serif;
+ 
+}
+
+ul{
+  font-size: 80px;
+  position: absolute;
+  left: 1%;
+ list-style: none;
+ top: 25%;
+ font-family: 'Poppins', sans-serif;
+ font-weight: 800;
+ font-style: italic;
+  
+}
+span{
+  color: var(--Purple);
+}
 
